@@ -1,0 +1,1388 @@
+/* =========================================================
+   FOLLOW-UP PAGE
+========================================================= */
+
+.followup-page {
+    min-height: calc(100vh - var(--header-height));
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(23, 107, 255, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 0 100%,
+            rgba(22, 165, 106, 0.06),
+            transparent 25%
+        ),
+        var(--bg);
+
+    animation: followupPageEnter 0.8s ease-out both;
+}
+
+
+/* =========================================================
+   PAGE ENTRY ANIMATION
+========================================================= */
+
+@keyframes followupPageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MULTI SELECT WHATSAPP NUMBERS
+========================================================= */
+
+#selected-number {
+    width: 100%;
+    min-height: 130px;
+
+    padding: 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    outline: none;
+
+    color: var(--text);
+    background: var(--surface-2);
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.followup-compact-list #selected-number {
+    min-height: 95px;
+
+    padding: 6px;
+
+    font-size: 13px;
+}
+
+#selected-number:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(23, 107, 255, 0.10);
+}
+
+#selected-number option {
+    padding: 10px 12px;
+
+    border-radius: 7px;
+
+    color: var(--text);
+
+    background: var(--surface);
+}
+
+#selected-number option:checked {
+    color: #ffffff;
+
+    background: var(--primary);
+}
+
+.followup-selected-number {
+    margin: 9px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.followup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 26px 30px;
+    margin-bottom: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: var(--surface);
+
+    box-shadow:
+        var(--shadow-sm),
+        0 10px 30px rgba(15, 23, 42, 0.03);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Small decorative glow */
+
+.followup-header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background: rgba(23, 107, 255, 0.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.followup-title-wrap {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.followup-title-icon {
+    display: grid;
+    place-items: center;
+
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176bff,
+            #16a56a
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(23, 107, 255, 0.18);
+}
+
+.followup-eyebrow {
+    margin-bottom: 2px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+}
+
+.followup-header h1 {
+    margin: 2px 0 5px;
+
+    color: var(--heading);
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+.followup-header p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   HEADER BADGE
+========================================================= */
+
+.followup-header-badge {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: var(--text-soft);
+
+    background: var(--surface-2);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.followup-form {
+    display: grid;
+
+    width: 100%;
+    max-width: none;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   3-COLUMN SECTIONS CONTAINER
+========================================================= */
+
+.followup-sections-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 18px;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.followup-form-section {
+    padding: 22px 18px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   COMPACT SECTION HEADING
+========================================================= */
+
+.followup-compact-heading {
+    margin-bottom: 16px;
+
+    flex-direction: column;
+    gap: 0;
+}
+
+.followup-compact-heading > div:first-child {
+    width: 100%;
+}
+
+.followup-compact-heading h2 {
+    margin: 2px 0 0;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: -0.2px;
+}
+
+.followup-compact-heading p {
+    display: none;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.followup-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 27px 30px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+
+    box-shadow:
+        var(--shadow-sm),
+        0 8px 25px rgba(15, 23, 42, 0.025);
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.followup-card:hover {
+    box-shadow:
+        var(--shadow-sm),
+        0 12px 30px rgba(15, 23, 42, 0.045);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.followup-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.followup-section-heading > div {
+    flex: 1;
+}
+
+.followup-step {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+}
+
+.followup-section-heading h2 {
+    margin: 0 0 5px;
+
+    color: var(--heading);
+
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+}
+
+.followup-section-heading p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+.followup-heading-icon {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    color: var(--primary);
+
+    background:
+        rgba(23, 107, 255, 0.07);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.followup-label {
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: var(--heading);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MOBILE NUMBER INPUT
+========================================================= */
+
+.followup-number-entry {
+    display: flex;
+
+    gap: 11px;
+}
+
+.followup-number-entry input {
+    flex: 1;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.followup-number-entry input,
+.followup-card select,
+.followup-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    outline: none;
+
+    color: var(--text);
+    background: var(--surface-2);
+
+    font: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.followup-number-entry input,
+.followup-card select {
+    height: 48px;
+
+    padding: 0 15px;
+}
+
+.followup-card textarea {
+    display: block;
+
+    min-height: 145px;
+
+    padding: 14px 15px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.followup-form-section textarea {
+    min-height: 150px;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.followup-number-entry input:focus,
+.followup-card select:focus,
+.followup-card textarea:focus {
+    border-color: var(--primary);
+
+    background: var(--surface);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(23, 107, 255, 0.10);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.followup-secondary-button,
+.followup-send-button,
+.followup-remove-button,
+.followup-change-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   ADD NUMBER BUTTON
+========================================================= */
+
+.followup-secondary-button {
+    min-height: 48px;
+
+    flex-shrink: 0;
+
+    padding: 0 18px;
+
+    color: #ffffff;
+
+    background: var(--primary);
+
+    box-shadow:
+        0 7px 16px
+        rgba(23, 107, 255, 0.16);
+}
+
+.followup-secondary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(23, 107, 255, 0.22);
+}
+
+.followup-secondary-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FIELD ERROR
+========================================================= */
+
+.followup-field-error {
+    margin: 7px 0 0;
+
+    color: var(--red);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   WHATSAPP NUMBER LIST
+========================================================= */
+
+.followup-number-list {
+    display: grid;
+
+    gap: 9px;
+
+    margin-top: 20px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.followup-number-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    color: var(--heading);
+    background: var(--surface-2);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.followup-number-row:hover {
+    border-color:
+        rgba(23, 107, 255, 0.25);
+
+    background:
+        rgba(23, 107, 255, 0.025);
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SELECTED TAG
+========================================================= */
+
+.followup-selected-tag {
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    color: var(--green);
+
+    background:
+        rgba(22, 165, 106, 0.10);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
+}
+
+.followup-number-list select {
+    margin-top: -2px;
+}
+
+.followup-recipient-list {
+    display: grid;
+    gap: 7px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 6px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--surface-2);
+}
+
+.followup-select-all-button {
+    justify-self: start;
+    padding: 5px 9px;
+    border: 1px solid rgba(23, 107, 255, 0.25);
+    border-radius: 7px;
+    color: var(--primary);
+    background: rgba(23, 107, 255, 0.06);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.followup-select-all-button:hover {
+    background: rgba(23, 107, 255, 0.12);
+}
+
+.followup-recipient-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.followup-recipient-option.selected {
+    color: var(--heading);
+    background: rgba(23, 107, 255, 0.12);
+}
+
+.followup-recipient-option input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
+}
+
+.followup-selected-number {
+    margin: 3px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+.followup-selected-number strong {
+    color: var(--heading);
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.followup-file-input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.followup-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 185px;
+
+    padding: 25px;
+
+    border: 1.5px dashed
+        rgba(23, 107, 255, 0.30);
+
+    border-radius: 14px;
+
+    color: var(--primary);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23, 107, 255, 0.035),
+            rgba(22, 165, 106, 0.025)
+        );
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.followup-compact-upload {
+    min-height: 155px;
+
+    padding: 18px 15px;
+}
+
+.followup-upload-area:hover {
+    border-color: var(--primary);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23, 107, 255, 0.07),
+            rgba(22, 165, 106, 0.045)
+        );
+
+    transform: translateY(-2px);
+}
+
+.followup-upload-area strong {
+    margin-top: 10px;
+
+    color: var(--heading);
+
+    font-size: 14px;
+}
+
+.followup-upload-area span {
+    margin-top: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+.followup-compact-upload strong {
+    margin-top: 6px;
+
+    font-size: 12px;
+}
+
+.followup-compact-upload span {
+    margin-top: 3px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.followup-preview-wrap {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--surface-2);
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.03);
+}
+
+.followup-compact-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.followup-preview {
+    display: block;
+
+    width: 100%;
+    max-height: 320px;
+
+    object-fit: contain;
+
+    background: #eef2f7;
+}
+
+.followup-compact-preview .followup-preview {
+    max-height: 140px;
+}
+
+.followup-preview-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-soft);
+
+    background: var(--surface);
+
+    font-size: 12px;
+}
+
+.followup-preview-actions > span {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.followup-preview-actions > div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   IMAGE CHANGE / REMOVE
+========================================================= */
+
+.followup-change-button,
+.followup-remove-button {
+    padding: 7px 10px;
+
+    background: transparent;
+}
+
+.followup-change-button {
+    color: var(--primary);
+}
+
+.followup-remove-button {
+    color: var(--red);
+}
+
+.followup-change-button:hover,
+.followup-remove-button:hover {
+    background: var(--surface-3);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR MESSAGE
+========================================================= */
+
+.followup-feedback {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 15px;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.followup-feedback.error {
+    color: #b42318;
+
+    background: #fff1f0;
+
+    border: 1px solid #fecdca;
+}
+
+.followup-feedback.success {
+    color: #067647;
+
+    background: #ecfdf3;
+
+    border: 1px solid #abefc6;
+}
+
+
+/* =========================================================
+   SEND ACTION
+========================================================= */
+
+.followup-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-top: 2px;
+}
+
+.followup-send-button {
+    min-height: 50px;
+
+    padding: 0 23px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176bff,
+            #0f56d9
+        );
+
+    box-shadow:
+        0 9px 22px
+        rgba(23, 107, 255, 0.20);
+}
+
+.followup-send-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(23, 107, 255, 0.26);
+}
+
+.followup-send-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.followup-send-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.48;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .followup-sections-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+    }
+
+    .followup-form-section {
+        padding: 20px 16px;
+    }
+
+    .followup-compact-upload {
+        min-height: 140px;
+        padding: 14px 12px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .followup-sections-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .followup-form-section {
+        padding: 20px 16px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .followup-sections-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .followup-form-section {
+        padding: 22px 18px;
+    }
+
+    .followup-form-section textarea {
+        min-height: 140px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .followup-page {
+        padding: 24px;
+    }
+
+    .followup-header {
+        padding: 23px;
+    }
+
+    .followup-card {
+        padding: 24px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .followup-page {
+        padding: 18px 14px;
+    }
+
+    .followup-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+    .followup-title-wrap {
+        align-items: flex-start;
+    }
+
+    .followup-title-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .followup-header h1 {
+        font-size: 25px;
+    }
+
+    .followup-header-badge {
+        align-self: flex-start;
+    }
+
+    .followup-card,
+    .followup-form-section {
+        padding: 18px 14px;
+
+        border-radius: 15px;
+    }
+
+    .followup-section-heading,
+    .followup-compact-heading {
+        align-items: flex-start;
+    }
+
+    .followup-number-entry {
+        flex-direction: column;
+    }
+
+    .followup-secondary-button {
+        width: 100%;
+
+        min-height: 44px;
+    }
+
+    .followup-number-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .followup-actions {
+        width: 100%;
+    }
+
+    .followup-send-button {
+        width: 100%;
+    }
+
+    .followup-preview-actions {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .followup-preview-actions > div {
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+    .followup-form-section textarea {
+        min-height: 130px;
+    }
+
+    .followup-compact-upload {
+        min-height: 130px;
+    }
+
+    .followup-compact-list #selected-number {
+        min-height: 85px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .followup-page {
+        animation: none;
+    }
+
+    .followup-card,
+    .followup-number-row,
+    .followup-upload-area,
+    .followup-send-button,
+    .followup-secondary-button {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   FOLLOW-UP CARD DECORATIVE CORNER
+   Matches the dashboard/report card style
+========================================================= */
+
+.followup-card {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+}
+
+
+/* ---------------------------------------------------------
+   TOP-RIGHT SOFT GLOW
+--------------------------------------------------------- */
+
+.followup-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: -105px;
+    right: -85px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(23, 107, 255, 0.12) 0%,
+            rgba(23, 107, 255, 0.06) 38%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   SECOND SOFT GRADIENT SHAPE
+--------------------------------------------------------- */
+
+.followup-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+    height: 115px;
+
+    top: -62px;
+    right: -48px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 165, 106, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   KEEP CARD CONTENT ABOVE DECORATION
+--------------------------------------------------------- */
+
+.followup-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER EFFECT
+--------------------------------------------------------- */
+
+.followup-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(23, 107, 255, 0.16);
+
+    box-shadow:
+        var(--shadow-sm),
+        0 14px 35px rgba(15, 23, 42, 0.055);
+}
+
+
+.followup-card:hover::before {
+    transform: scale(1.18);
+
+    opacity: 1;
+}
+
+
+.followup-card:hover::after {
+    transform: scale(1.25);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   WHATSAPP CARD
+   Slightly blue/green communication glow
+========================================================= */
+
+.followup-number-card::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(23, 107, 255, 0.14) 0%,
+            rgba(22, 165, 106, 0.07) 40%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   IMAGE CARD
+   Soft blue upload glow
+========================================================= */
+
+.followup-card:nth-child(2)::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(23, 107, 255, 0.13) 0%,
+            rgba(23, 107, 255, 0.05) 42%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   MESSAGE CARD
+   Soft purple/blue communication glow
+========================================================= */
+
+.followup-card:nth-child(3)::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(123, 97, 255, 0.11) 0%,
+            rgba(23, 107, 255, 0.05) 42%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   Reduce movement for users who prefer less animation
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .followup-card,
+    .followup-card::before,
+    .followup-card::after {
+        transition: none;
+    }
+
+    .followup-card:hover {
+        transform: none;
+    }
+}

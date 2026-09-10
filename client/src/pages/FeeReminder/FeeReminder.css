@@ -1,0 +1,1206 @@
+/* =========================================================
+   FEE REMINDER PAGE
+========================================================= */
+
+.fee-reminder-page {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(34, 197, 94, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(59, 130, 246, 0.06),
+      transparent 30%
+    ),
+    #f7f9fc;
+  color: #172033;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fee-reminder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.fee-reminder-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fee-reminder-title-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #16a34a,
+    #22c55e
+  );
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px rgba(34, 197, 94, 0.25);
+}
+
+.fee-reminder-small-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #16a34a;
+  margin-bottom: 3px;
+}
+
+.fee-reminder-header h1 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.fee-reminder-header p {
+  margin: 5px 0 0;
+  color: #7a8497;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.fee-reminder-refresh {
+  border: 0;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border-radius: 11px;
+
+  background: white;
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  border: 1px solid #e5e9f0;
+
+  box-shadow: 0 5px 18px rgba(16, 24, 40, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.fee-reminder-refresh:hover {
+  transform: translateY(-2px);
+
+  border-color: #bbf7d0;
+
+  box-shadow:
+    0 9px 25px rgba(16, 24, 40, 0.09);
+}
+
+.fee-reminder-refresh svg {
+  color: #16a34a;
+}
+
+.fee-reminder-refresh.refreshing svg {
+  animation: reminderSpin 0.8s linear infinite;
+}
+
+@keyframes reminderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   STATUS CARD
+========================================================= */
+
+.reminder-status-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 17px 19px;
+
+  border-radius: 15px;
+
+  margin-bottom: 23px;
+
+  border: 1px solid transparent;
+
+  transition: 0.25s ease;
+}
+
+.reminder-status-card.active {
+  background: linear-gradient(
+    135deg,
+    #ecfdf3,
+    #f7fff9
+  );
+
+  border-color: #bbf7d0;
+}
+
+.reminder-status-card.inactive {
+  background: linear-gradient(
+    135deg,
+    #fff7ed,
+    #fffaf5
+  );
+
+  border-color: #fed7aa;
+}
+
+.reminder-status-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+}
+
+.active .reminder-status-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.inactive .reminder-status-icon {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.reminder-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  flex: 1;
+}
+
+.reminder-status-content strong {
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.reminder-status-content span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.reminder-date-badge {
+  padding: 7px 12px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  color: #475467;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.fee-reminder-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 11px;
+
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+
+  color: #be123c;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.fee-reminder-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+
+  margin-bottom: 23px;
+}
+
+.reminder-stat-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: white;
+
+  border: 1px solid #e8ecf2;
+
+  box-shadow:
+    0 7px 24px rgba(16, 24, 40, 0.055);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reminder-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  right: -25px;
+  bottom: -30px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  opacity: 0.04;
+}
+
+.reminder-stat-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 32px rgba(16, 24, 40, 0.09);
+}
+
+.reminder-stat-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.reminder-stat-card.blue {
+  color: #2563eb;
+}
+
+.reminder-stat-card.blue .reminder-stat-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.reminder-stat-card.orange {
+  color: #ea580c;
+}
+
+.reminder-stat-card.orange .reminder-stat-icon {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.reminder-stat-card.green {
+  color: #16a34a;
+}
+
+.reminder-stat-card.green .reminder-stat-icon {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.reminder-stat-card.purple {
+  color: #7c3aed;
+}
+
+.reminder-stat-card.purple .reminder-stat-icon {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.reminder-stat-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.reminder-stat-card span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7a8497;
+}
+
+.reminder-stat-card strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.fee-reminder-card {
+  background: white;
+
+  border: 1px solid #e7ebf1;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(16, 24, 40, 0.055);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.fee-reminder-card-header {
+  padding: 22px 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.fee-reminder-section-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  color: #1f2937;
+}
+
+.fee-reminder-section-title svg {
+  color: #16a34a;
+}
+
+.fee-reminder-card-header p {
+  margin: 6px 0 0;
+
+  font-size: 12px;
+  color: #8a94a6;
+}
+
+.pending-count {
+  padding: 7px 12px;
+
+  border-radius: 8px;
+
+  background: #f0fdf4;
+  color: #15803d;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.fee-reminder-toolbar {
+  padding: 16px 23px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  background: #fcfdfd;
+}
+
+.fee-reminder-search {
+  width: 100%;
+  max-width: 410px;
+
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  border: 1px solid #dfe4eb;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fee-reminder-search:focus-within {
+  border-color: #86efac;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.09);
+}
+
+.fee-reminder-search > svg {
+  color: #98a2b3;
+  flex-shrink: 0;
+}
+
+.fee-reminder-search input {
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font-size: 13px;
+
+  color: #1f2937;
+}
+
+.fee-reminder-search input::placeholder {
+  color: #a3acba;
+}
+
+.clear-search {
+  border: 0;
+  background: transparent;
+
+  font-size: 21px;
+
+  color: #98a2b3;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+.clear-search:hover {
+  color: #344054;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.fee-reminder-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fee-reminder-table {
+  width: 100%;
+  min-width: 1000px;
+
+  border-collapse: collapse;
+}
+
+.fee-reminder-table thead {
+  background: #f8fafc;
+}
+
+.fee-reminder-table th {
+  padding: 14px 17px;
+
+  text-align: left;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  font-weight: 800;
+
+  color: #7a8497;
+
+  border-bottom: 1px solid #e9edf2;
+
+  white-space: nowrap;
+}
+
+.fee-reminder-table td {
+  padding: 15px 17px;
+
+  border-bottom: 1px solid #f0f2f5;
+
+  vertical-align: middle;
+}
+
+.fee-reminder-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.fee-reminder-table tbody tr:hover {
+  background: #fbfefc;
+}
+
+.fee-reminder-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.student-number {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #f5f7fa;
+
+  color: #667085;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   STUDENT
+========================================================= */
+
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 190px;
+}
+
+.student-avatar {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #dcfce7,
+    #bbf7d0
+  );
+
+  color: #15803d;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.student-details strong {
+  font-size: 13px;
+  font-weight: 800;
+
+  color: #1f2937;
+}
+
+.student-details span {
+  font-size: 10px;
+  color: #98a2b3;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+.mobile-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  white-space: nowrap;
+
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mobile-info svg {
+  color: #16a34a;
+}
+
+
+/* =========================================================
+   COURSE
+========================================================= */
+
+.course-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.course-info svg {
+  color: #6366f1;
+}
+
+
+/* =========================================================
+   PENDING AMOUNT
+========================================================= */
+
+.pending-fee-amount {
+  color: #dc2626;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.pending-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  background: #fff7ed;
+
+  color: #c2410c;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #f97316;
+
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.whatsapp-reminder-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 5px 14px rgba(22, 163, 74, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-reminder-btn:hover:not(:disabled) {
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(22, 163, 74, 0.27);
+}
+
+.whatsapp-reminder-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.whatsapp-reminder-btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.fee-reminder-empty {
+  min-height: 340px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  padding: 50px 20px;
+}
+
+.empty-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #f0fdf4;
+
+  color: #16a34a;
+
+  margin-bottom: 15px;
+}
+
+.fee-reminder-empty h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #1f2937;
+}
+
+.fee-reminder-empty p {
+  margin: 7px 0 0;
+
+  font-size: 13px;
+
+  color: #8a94a6;
+}
+
+
+/* =========================================================
+   REMINDER CLOSED
+========================================================= */
+
+.reminder-closed {
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  padding: 50px 20px;
+}
+
+.reminder-closed-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: #fff7ed;
+
+  color: #ea580c;
+
+  margin-bottom: 17px;
+}
+
+.reminder-closed h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #1f2937;
+}
+
+.reminder-closed p {
+  max-width: 480px;
+
+  margin: 8px auto 17px;
+
+  color: #7a8497;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.reminder-closed p strong {
+  color: #ea580c;
+}
+
+.next-reminder-box {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border-radius: 9px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  color: #9a3412;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.fee-reminder-loading {
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.fee-reminder-loader {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #f0fdf4;
+
+  color: #16a34a;
+
+  animation: reminderPulse 1.4s ease-in-out infinite;
+
+  margin-bottom: 17px;
+}
+
+.fee-reminder-loading h3 {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #1f2937;
+}
+
+.fee-reminder-loading p {
+  margin: 7px 0 0;
+
+  font-size: 13px;
+
+  color: #8a94a6;
+}
+
+@keyframes reminderPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.18);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+  }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.fee-reminder-footer {
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 11px 4px;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #8a94a6;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.footer-info svg {
+  flex-shrink: 0;
+  color: #98a2b3;
+}
+
+.footer-brand {
+  color: #16a34a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .fee-reminder-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 800px) {
+  .fee-reminder-page {
+    padding: 18px;
+  }
+
+  .fee-reminder-header {
+    align-items: flex-start;
+  }
+
+  .fee-reminder-header-left {
+    align-items: flex-start;
+  }
+
+  .fee-reminder-header h1 {
+    font-size: 24px;
+  }
+
+  .reminder-status-card {
+    align-items: flex-start;
+  }
+
+  .reminder-date-badge {
+    display: none;
+  }
+
+  .fee-reminder-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .fee-reminder-page {
+    padding: 14px;
+  }
+
+  .fee-reminder-header {
+    flex-direction: column;
+  }
+
+  .fee-reminder-header-left {
+    width: 100%;
+  }
+
+  .fee-reminder-title-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .fee-reminder-header h1 {
+    font-size: 22px;
+  }
+
+  .fee-reminder-refresh {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fee-reminder-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .fee-reminder-toolbar {
+    padding: 13px;
+  }
+
+  .fee-reminder-search {
+    max-width: none;
+  }
+
+  .fee-reminder-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-brand {
+    display: none;
+  }
+}
+
+
+@media (max-width: 430px) {
+  .fee-reminder-header-left {
+    gap: 11px;
+  }
+
+  .fee-reminder-title-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+
+  .fee-reminder-small-title {
+    font-size: 9px;
+  }
+
+  .fee-reminder-header h1 {
+    font-size: 20px;
+  }
+
+  .fee-reminder-header p {
+    font-size: 11px;
+  }
+
+  .reminder-status-card {
+    padding: 13px;
+  }
+
+  .reminder-status-content strong {
+    font-size: 12px;
+  }
+
+  .reminder-status-content span {
+    font-size: 10px;
+  }
+
+  .reminder-closed {
+    min-height: 320px;
+  }
+}
